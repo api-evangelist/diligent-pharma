@@ -42,5 +42,10 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Diligent Pharma is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Diligent Pharma, Inc. is a Princeton, New Jersey clinical-trial quality and compliance company, founded in 2015, that operates a centralized vendor qualification and oversight platform for pharmaceutical and biotech sponsors and their service providers. Its Diligent360 platform unifies the vendor lifecycle — AI-assisted discovery across a network of 2,000+ clinical vendors, capability evaluation through standardized questionnaires, risk scoring across quality, compliance, cybersecurity and AI risk domains, qualification against ICH E6(R3) and GxP expectations, and ongoing oversight monitoring. Companion products DiligentRespond and DiligentQualified sit alongside a GxP audit services practice.
+
+**Developer surface:** Diligent Pharma publishes no public API, developer portal, or machine-readable specification. Diligent360 is delivered only as an authenticated web application. The only machine-readable documents on any Diligent Pharma host are the OAuth 2.0 / OpenID Connect discovery documents served by `clerk.diligentpharma.com`, which govern application sign-in.
+
+- https://www.diligentpharma.com/
+- https://360.diligentpharma.com/
+- https://trust.diligentpharma.com/

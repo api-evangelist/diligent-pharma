@@ -1,0 +1,56 @@
+generated: '2026-08-12'
+method: probed
+source: https://clerk.diligentpharma.com/.well-known/oauth-authorization-server
+description: >-
+  OAuth 2.0 scopes advertised by the Diligent Pharma authorization server
+  (clerk.diligentpharma.com), the Clerk-hosted identity provider behind the
+  Diligent360 application. These are identity/profile scopes for application sign-in,
+  not resource scopes over a published Diligent Pharma API — Diligent Pharma publishes
+  no developer API and no scopes reference page. Recorded verbatim from the discovery
+  document; nothing here is inferred.
+authorization_server: https://clerk.diligentpharma.com
+docs: https://clerk.com/docs/oauth/scoped-access
+docs_note: >-
+  service_documentation in the discovery document points at Clerk's own generic
+  documentation, not at a Diligent Pharma scopes reference. No provider-authored
+  scope documentation exists.
+scope_type: identity
+resource_scopes_published: false
+scope_count: 6
+scopes:
+  - name: openid
+    description: OpenID Connect sign-in; requests an ID token for the authenticated user.
+    standard: true
+  - name: profile
+    description: >-
+      Basic profile claims — name, given_name, family_name, preferred_username, picture.
+    standard: true
+  - name: email
+    description: Email address and its verification state (email, email_verified claims).
+    standard: true
+  - name: offline_access
+    description: Issues a refresh token so the client can renew access without re-prompting.
+    standard: true
+  - name: public_metadata
+    description: >-
+      Clerk public metadata attached to the user record — application-defined,
+      readable by the client and the frontend.
+    standard: false
+  - name: private_metadata
+    description: >-
+      Clerk private metadata attached to the user record — application-defined,
+      backend-only data.
+    standard: false
+claims_supported:
+  - sub
+  - iss
+  - aud
+  - exp
+  - iat
+  - email
+  - email_verified
+  - preferred_username
+  - given_name
+  - family_name
+  - name
+  - picture

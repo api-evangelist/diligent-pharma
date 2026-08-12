@@ -1,0 +1,127 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of every Diligent Pharma host reachable from apis.yml
+description: >-
+  Results of probing the /.well-known/ discovery surface for every Diligent Pharma
+  host: the marketing site (www.diligentpharma.com), the authenticated Diligent360
+  application (360.diligentpharma.com), the Zendesk support centre
+  (support.diligentpharma.com), and the identity host (clerk.diligentpharma.com)
+  discovered in the Diligent360 JavaScript bundle. Status is the HTTP code observed
+  at fetch time.
+
+  IMPORTANT — 360.diligentpharma.com is a create-react-app single-page application
+  whose server answers 200 with the SAME 1,205-byte text/html shell for every path,
+  including every /.well-known/* path, /openapi.json, /swagger.json and /llms.txt.
+  Those 200s are NOT documents and are recorded here as soft-200 false positives so
+  a later round does not re-credit them.
+
+  The only real documents found anywhere on a Diligent Pharma host are the three
+  OAuth 2.0 / OpenID Connect discovery documents served by clerk.diligentpharma.com,
+  the Clerk-hosted identity provider behind the Diligent360 application login. They
+  describe end-user application sign-in, not a documented public developer API.
+hosts:
+  - host: https://www.diligentpharma.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://360.diligentpharma.com
+    note: >-
+      SPA catch-all. Every path below returned HTTP 200 with an identical
+      text/html create-react-app shell (1,205 bytes, title "Diligent Pharma").
+      None is a document; none was saved.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell, not a security.txt
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell, not OIDC discovery
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell
+      - path: /.well-known/api-catalog
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell
+      - path: /.well-known/agent-card.json
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell — NOT an A2A agent card; no a2a/ artifact was written
+      - path: /.well-known/agent.json
+        status: 200
+        type: text/html
+        real_document: false
+        note: SPA shell — NOT an A2A agent card
+  - host: https://support.diligentpharma.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+  - host: https://clerk.diligentpharma.com
+    note: >-
+      Clerk-hosted identity provider for the Diligent360 application, discovered
+      in the application JavaScript bundle. Serves real, parseable discovery
+      documents.
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: application/json
+        real_document: true
+        file: diligent-pharma-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: application/json
+        real_document: true
+        file: diligent-pharma-oauth-authorization-server.json
+      - path: /.well-known/jwks.json
+        status: 200
+        type: application/json
+        real_document: true
+        file: diligent-pharma-jwks.json
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+summary:
+  hosts_probed: 4
+  paths_probed: 27
+  real_documents_found: 3
+  security_txt_served: false
+  api_catalog_served: false
+  agent_card_served: false

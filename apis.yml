@@ -1,17 +1,40 @@
 aid: diligent-pharma
 name: Diligent Pharma
-description: 'Diligent Pharma is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Diligent Pharma, Inc. is a Princeton, New Jersey clinical-trial quality
+  and compliance company, founded in 2015, that operates a centralized vendor qualification
+  and oversight platform for pharmaceutical and biotech sponsors and their service
+  providers. Its Diligent360 platform unifies the vendor lifecycle — AI-assisted discovery
+  across a network of 2,000+ clinical vendors, capability evaluation through standardized
+  questionnaires, risk scoring across quality, compliance, cybersecurity and AI risk
+  domains, qualification against ICH E6(R3) and GxP expectations, and ongoing oversight
+  monitoring. Companion products DiligentRespond (automated vendor questionnaire response)
+  and DiligentQualified (qualification package management) sit alongside a GxP audit
+  services practice. The company raised an $8.27M Series A led by FCA Venture Partners
+  in 2023 and has appeared on the Inc. 5000 list. The platform is delivered as an
+  authenticated web application at 360.diligentpharma.com; Diligent Pharma publishes
+  no public developer program, API reference, or machine-readable specification.'
 url: https://raw.githubusercontent.com/api-evangelist/diligent-pharma/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profile
+x-tier-reason: enrichment
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Clinical Trials
+- Life Sciences
+- Pharmaceuticals
+- Biotechnology
+- Vendor Management
+- Risk Management
+- Quality Management
+- Compliance
+- GxP
+- Auditing
+- SaaS
+image: https://framerusercontent.com/images/IVa30WHEF9tH1ceuGsXZVst1kLM.png
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +42,65 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/diligent-pharma-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.diligentpharma.com/
+- type: Login
+  url: https://360.diligentpharma.com/
+- type: Support
+  url: https://support.diligentpharma.com/hc/en-us
+- type: Blog
+  url: https://www.diligentpharma.com/resources
+- type: TermsOfService
+  url: https://www.diligentpharma.com/website-terms-of-use
+- type: PrivacyPolicy
+  url: https://www.diligentpharma.com/privacy-policy
+- type: TrustCenter
+  url: security/diligent-pharma-trust-center.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/diligentpharma
+- type: Contact
+  url: https://www.diligentpharma.com/contact-us
+- type: WellKnown
+  url: well-known/diligent-pharma-well-known.yml
+- type: Authentication
+  url: authentication/diligent-pharma-authentication.yml
+- type: OAuthScopes
+  url: scopes/diligent-pharma-scopes.yml
+- type: Conformance
+  url: conformance/diligent-pharma-conformance.yml
+- type: Lifecycle
+  url: lifecycle/diligent-pharma-lifecycle.yml
+- type: Plans
+  url: plans/diligent-pharma-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/diligent-pharma-rate-limits.yml
+- type: LLMsTxt
+  url: llms/diligent-pharma-llms.txt
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 14
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Diligent Pharma ships Diligent360 only as an authenticated end-user web app —
+    api., docs. and developer.diligentpharma.com do not resolve, and 360.diligentpharma.com
+    is a create-react-app SPA that answers 200 with the same 1,205-byte HTML shell for
+    /openapi.json, /swagger.json, /llms.txt and every /.well-known/ path, so none of those
+    200s is a document.
+  evidence:
+  - url: https://docs.diligentpharma.com/
+    status: 0
+  - url: https://api.diligentpharma.com/
+    status: 0
+  - url: https://360.diligentpharma.com/openapi.json
+    status: 200
+  - url: https://www.diligentpharma.com/.well-known/security.txt
+    status: 404
+  - url: https://clerk.diligentpharma.com/.well-known/openid-configuration
+    status: 200
+  checked: '2026-08-12'

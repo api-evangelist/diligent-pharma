@@ -1,0 +1,124 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  https://clerk.diligentpharma.com/.well-known/openid-configuration,
+  https://clerk.diligentpharma.com/.well-known/oauth-authorization-server,
+  https://www.diligentpharma.com/expertise/regulatory-standards,
+  https://www.diligentpharma.com/privacy-policy
+description: >-
+  Cross-cutting standards conformance for Diligent Pharma. Diligent Pharma publishes
+  no public API, so the API-layer section below records only what could be verified
+  from the discovery documents its identity host actually serves. A second section
+  records the REGULATORY frameworks the company's clinical-trial vendor qualification
+  practice is aligned to — those are the subject matter of the service, not conformance
+  claims about a machine interface, and they are kept separate so the two are never
+  confused.
+api_standards:
+  - id: oauth2
+    name: OAuth 2.0 (RFC 6749)
+    conforms: true
+    evidence: >-
+      clerk.diligentpharma.com serves /.well-known/oauth-authorization-server (RFC 8414)
+      advertising authorization_code and refresh_token grants, a token endpoint, and a
+      revocation endpoint (RFC 7009). Applies to Diligent360 application sign-in only.
+    scope: application-login
+  - id: oidc
+    name: OpenID Connect Core 1.0 / Discovery 1.0
+    conforms: true
+    evidence: >-
+      /.well-known/openid-configuration returns a valid discovery document with issuer,
+      authorization_endpoint, token_endpoint, userinfo_endpoint, jwks_uri, RS256 id_token
+      signing and public subject types.
+    scope: application-login
+  - id: rfc7636-pkce
+    name: PKCE (RFC 7636)
+    conforms: true
+    evidence: 'code_challenge_methods_supported: ["S256"]'
+    scope: application-login
+  - id: rfc8414
+    name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200 application/json.
+  - id: rfc7517-jwks
+    name: JSON Web Key Set (RFC 7517)
+    conforms: true
+    evidence: /.well-known/jwks.json returns 200 with an RS256 key set.
+  - id: rfc9116
+    name: security.txt (RFC 9116)
+    conforms: false
+    evidence: 404 on /.well-known/security.txt for every Diligent Pharma host probed.
+  - id: rfc9457
+    name: Problem Details for HTTP APIs (RFC 9457)
+    conforms: unknown
+    evidence: No public API or error reference is published; nothing to assess.
+  - id: openapi
+    name: OpenAPI
+    conforms: false
+    evidence: >-
+      No OpenAPI/Swagger document found on any host. 360.diligentpharma.com answers
+      200 with an HTML SPA shell for /openapi.json, /swagger.json and /api-docs; those
+      are not specs. See well-known/diligent-pharma-well-known.yml.
+  - id: a2a
+    name: A2A Agent Card
+    conforms: false
+    evidence: >-
+      No /.well-known/agent-card.json or /.well-known/agent.json document on any host;
+      the 200s on 360.diligentpharma.com are SPA shells.
+regulatory_domain:
+  note: >-
+    These are the regulatory frameworks Diligent Pharma's published expertise and
+    qualification methodology are aligned to. They describe the company's audit and
+    vendor-qualification service, NOT conformance of an API. Captured verbatim from
+    https://www.diligentpharma.com/expertise/regulatory-standards.
+  frameworks:
+    ich:
+      - ICH E2A
+      - ICH E6 (R3)
+      - ICH E8
+      - ICH E9
+      - ICH E17
+      - ICH E21
+    fda_us:
+      - 21 CFR Part 11
+      - 21 CFR 50
+      - 21 CFR 54
+      - 21 CFR 56
+      - 21 CFR 58
+      - 21 CFR 312
+      - 21 CFR 320
+    ema_eu:
+      - EU 536/2014
+      - EU Annex 11
+      - Eudralex Volume 10
+      - Directive 2004/9/EC
+      - Directive 2004/10/EC
+      - GDPR
+    mhra_uk:
+      - MHRA GCP Guide
+      - MHRA GCP SI 2004/1031
+      - MHRA Clinical Trial Regulations 2020
+      - MHRA Device Regulations
+      - GLP Regulations SI 1999/3106
+    pmda_japan:
+      - MHLW Ordinance No. 28
+      - MHLW Ordinance No. 36
+      - MHLW GLP Ordinance No. 21
+    other_authorities:
+      - Health Canada
+      - ANVISA
+      - Chinese FDA
+  privacy_regimes:
+    note: >-
+      Named in https://www.diligentpharma.com/privacy-policy as regimes the company
+      operates under.
+    frameworks:
+      - GDPR
+      - CCPA / CPRA
+      - Colorado, Connecticut, Nevada, Oregon, Texas, Utah, Virginia state privacy laws
+certifications_published: false
+certifications_note: >-
+  No SOC 2, ISO 27001, HIPAA, PCI or FedRAMP certification is named on any readable
+  Diligent Pharma page. A trust center exists at https://trust.diligentpharma.com/
+  (HyperComply) but its contents are rendered client-side over GraphQL and returned no
+  readable certification list to an unauthenticated fetch — see
+  security/diligent-pharma-trust-center.yml.

@@ -1,0 +1,56 @@
+generated: '2026-08-12'
+method: probed
+source: https://trust.diligentpharma.com/
+description: >-
+  Diligent Pharma publishes a trust center on its own subdomain,
+  https://trust.diligentpharma.com/ (HTTP 200), running the HyperComply Trust Center
+  product. The surface is real and provider-controlled, but its contents are rendered
+  entirely client-side: the served HTML is a shell titled "HyperComply" and every
+  section is fetched afterwards through an Apollo GraphQL client, so an unauthenticated
+  fetch returns no certification names, no framework list, no subprocessor list and no
+  downloadable documents. Presence is recorded here; NO certification is claimed,
+  because none could be read.
+trust_center:
+  url: https://trust.diligentpharma.com/
+  http_status: 200
+  platform: HyperComply
+  platform_evidence: >-
+    Page title "HyperComply"; assets preloaded from assets.hypercomply.com; the
+    Diligent360 application bundle also references https://diligent.hypercomply.com.
+  content_machine_readable: false
+  content_readable_reason: >-
+    JavaScript-rendered SPA backed by GraphQL (/api/1/graphql); server HTML contains
+    no trust content.
+certifications: []
+certifications_verified: false
+frameworks_referenced_elsewhere:
+  note: >-
+    Read from https://www.diligentpharma.com/privacy-policy and
+    https://www.diligentpharma.com/expertise/regulatory-standards, not from the trust
+    center itself.
+  frameworks:
+    - GDPR
+    - CCPA / CPRA
+    - 21 CFR Part 11
+    - EU Annex 11
+    - ICH E6 (R3)
+contacts:
+  - purpose: privacy
+    email: privacy@diligentpharma.com
+    source: https://www.diligentpharma.com/privacy-policy
+vulnerability_disclosure:
+  published: false
+  evidence:
+    - url: https://www.diligentpharma.com/.well-known/security.txt
+      status: 404
+    - url: https://www.diligentpharma.com/security
+      status: 404
+  note: >-
+    No security.txt, no responsible-disclosure page, and no bug bounty program
+    (HackerOne / Bugcrowd / Intigriti) was found. No VulnerabilityDisclosure or
+    Security pointer was emitted.
+gaps:
+  - Serve the trust center content server-rendered, or publish a machine-readable
+    summary, so the certifications the company holds are discoverable without executing
+    JavaScript.
+  - Publish an RFC 9116 /.well-known/security.txt naming a security contact and policy.

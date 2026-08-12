@@ -1,0 +1,57 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.diligentpharma.com/
+description: >-
+  Lifecycle posture for Diligent Pharma. With no public API there is no API versioning
+  scheme, deprecation policy, or sunset signalling to record. Every field below is a
+  verified absence rather than an unchecked field. Product change communication happens
+  through the marketing resources feed, not a dated changelog.
+api_versioning:
+  scheme: null
+  published: false
+  note: No public API and no version identifier documented anywhere.
+deprecation_policy:
+  published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  evidence:
+    - url: https://www.diligentpharma.com/sitemap.xml
+      status: 200
+      note: no deprecation, sunset, versioning or lifecycle page among 60+ URLs
+status_page:
+  published: false
+  evidence:
+    - url: https://status.diligentpharma.com/
+      status: 000
+      note: host does not resolve
+    - url: https://diligentpharma.statuspage.io/
+      status: 200
+      note: >-
+        SOFT HIT — REJECTED. Redirects to
+        https://www.atlassian.com/software/statuspage (the Statuspage product
+        marketing page), not a Diligent Pharma status page. No StatusPage pointer
+        was emitted.
+sla:
+  published: false
+changelog:
+  dated_changelog: false
+  substitute:
+    name: Resources / news feed
+    url: https://www.diligentpharma.com/resources
+    note: >-
+      Undated-in-URL marketing posts and announcements (product launches such as
+      "Announcing DiligentRespond for Vendors", template releases, award and funding
+      news). Not a versioned product changelog, so no ChangeLog pointer was emitted.
+    recent_announcements:
+      - title: Diligent Pharma named to the Inc. 5000 list for the second consecutive year
+        url: https://www.diligentpharma.com/resources/diligent-pharma-named-to-the-inc.-5000-list-for-the-second-consecutive-year
+      - title: Diligent Pharma releases 63 vendor questionnaire templates to standardize qualification
+        url: https://www.diligentpharma.com/resources/diligent-pharma-releases-63-vendor-questionnaire-templates-to-standardize-qualification
+      - title: Kapadi joins Diligent Pharma's Qualified Vendor Network
+        url: https://www.diligentpharma.com/resources/kapadi-joins-diligent-pharma-s-qualified-vendor-network
+      - title: Announcing DiligentRespond for Vendors
+        url: https://www.diligentpharma.com/resources/announcing-diligentrespond-for-vendors
+      - title: Diligent Pharma, Inc. announces Series A financing
+        url: https://www.diligentpharma.com/resources/diligent-pharma-inc.-announces-series-a-financing
+deprecated_operations: []

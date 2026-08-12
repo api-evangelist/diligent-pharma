@@ -1,0 +1,24 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.diligentpharma.com/
+description: >-
+  No rate limits are published. Diligent Pharma exposes no public API and no developer
+  documentation of any kind, so there is no limit, window, burst allowance, exhaustion
+  status code, or rate-limit response header to record. No X-RateLimit-*, RateLimit-*
+  or Retry-After header was observed on any unauthenticated response from
+  www.diligentpharma.com or 360.diligentpharma.com. This is an honest zero, not an
+  unchecked field.
+limit_count: 0
+limits: []
+headers_observed: []
+exhaustion_status: null
+evidence:
+  - url: https://www.diligentpharma.com/
+    status: 200
+    note: no rate-limit headers on response
+  - url: https://360.diligentpharma.com/
+    status: 200
+    note: SPA shell; no rate-limit headers on response
+  - url: https://docs.diligentpharma.com/
+    status: 000
+    note: host does not resolve — no documentation site exists

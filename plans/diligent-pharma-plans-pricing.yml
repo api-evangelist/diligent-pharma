@@ -1,0 +1,34 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.diligentpharma.com/
+description: >-
+  Diligent Pharma publishes no pricing. There is no /pricing page (HTTP 404), no plans
+  or tiers page, and no price appears anywhere in the sitemap's 60+ URLs. Every
+  commercial path on the site converts to a sales conversation: "Book a Demo"
+  (/book-a-demo) and "Request a Consultation" (/request-consultation). Named
+  qualification packages exist under /qualification-packages/<vendor> but they are
+  vendor-specific qualification content, not priced plans. An audit burden calculator
+  (/audit-burden-calculator) estimates savings, not price.
+plan_count: 0
+pricing_model: contact-sales
+currency: null
+free_tier: false
+self_serve_signup: false
+evidence:
+  - url: https://www.diligentpharma.com/pricing
+    status: 404
+  - url: https://www.diligentpharma.com/book-a-demo
+    status: 200
+  - url: https://www.diligentpharma.com/request-consultation
+    status: 200
+  - url: https://www.diligentpharma.com/sitemap.xml
+    status: 200
+    note: 60+ URLs, none of them a pricing or plans page
+plans: []
+sales_paths:
+  - name: Book a Demo
+    url: https://www.diligentpharma.com/book-a-demo
+  - name: Request a Consultation
+    url: https://www.diligentpharma.com/request-consultation
+  - name: Contact Us
+    url: https://www.diligentpharma.com/contact-us

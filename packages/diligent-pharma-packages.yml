@@ -1,0 +1,35 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, rubygems.org, github.com, and the Diligent Pharma
+  website
+description: >-
+  No first-party Diligent Pharma client library, SDK or CLI exists in any public
+  package registry. Diligent Pharma publishes no API, so there is nothing for an SDK to
+  wrap. Every registry below was queried unauthenticated and returned no first-party
+  package. Recorded as a checked, empty result — not an unchecked field.
+package_count: 0
+official_sdk_count: 0
+packages: []
+registries_checked:
+  - registry: npm
+    query: 'diligentpharma / "diligent pharma"'
+    endpoint: https://registry.npmjs.org/-/v1/search
+    result: 0 first-party packages (the "diligent pharma" text search returns only unrelated packages)
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/diligentpharma/json
+    status: 404
+    result: absent
+  - registry: rubygems
+    endpoint: https://rubygems.org/api/v1/gems/diligentpharma.json
+    status: 404
+    result: absent
+  - registry: github
+    endpoint: https://github.com/diligentpharma
+    status: 404
+    result: no public GitHub organization
+sdk_links_in_docs: []
+note: >-
+  A GitHub organization at github.com/diligentpharma returns 404, so there is no public
+  source repository to derive package candidates from either. No SDKs pointer was
+  emitted.

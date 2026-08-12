@@ -1,0 +1,95 @@
+generated: '2026-08-12'
+method: probed
+source: https://clerk.diligentpharma.com/.well-known/openid-configuration
+description: >-
+  Authentication profile for Diligent Pharma. Diligent Pharma publishes no public
+  developer API and no API authentication documentation, so this profile is derived
+  entirely from the OpenID Connect / OAuth 2.0 discovery documents that
+  clerk.diligentpharma.com serves for the authenticated Diligent360 application at
+  360.diligentpharma.com. It describes how a user (or an OAuth client registered with
+  Diligent Pharma) signs into the Diligent360 web application — it is NOT a published
+  developer-facing API authentication scheme, and there is no public client
+  registration, key issuance, or token documentation.
+scope_of_this_profile: application-login
+public_api_auth_documented: false
+identity_provider:
+  vendor: Clerk
+  issuer: https://clerk.diligentpharma.com
+  host_ownership: >-
+    clerk.diligentpharma.com is a Diligent Pharma-controlled hostname (Clerk custom
+    domain), so the discovery document is served from the provider's own domain.
+  discovered_via: >-
+    Diligent360 application JavaScript bundle
+    (https://360.diligentpharma.com/static/js/main.c2911d32.js), which references
+    https://clerk.diligentpharma.com/oauth/authorize
+schemes:
+  - name: openIdConnect
+    type: openIdConnect
+    openIdConnectUrl: https://clerk.diligentpharma.com/.well-known/openid-configuration
+    issuer: https://clerk.diligentpharma.com
+    userinfo_endpoint: https://clerk.diligentpharma.com/oauth/userinfo
+    jwks_uri: https://clerk.diligentpharma.com/.well-known/jwks.json
+    id_token_signing_alg_values_supported:
+      - RS256
+    subject_types_supported:
+      - public
+    claims_supported:
+      - aud
+      - iss
+      - email
+      - email_verified
+      - preferred_username
+      - exp
+      - iat
+      - given_name
+      - family_name
+      - name
+      - picture
+      - sub
+    backchannel_logout_supported: false
+    frontchannel_logout_supported: false
+    source: well-known/diligent-pharma-openid-configuration.json
+  - name: oauth2
+    type: oauth2
+    flows:
+      authorizationCode:
+        authorizationUrl: https://clerk.diligentpharma.com/oauth/authorize
+        tokenUrl: https://clerk.diligentpharma.com/oauth/token
+        refreshUrl: https://clerk.diligentpharma.com/oauth/token
+        scopes:
+          openid: OpenID Connect sign-in; issues an ID token
+          profile: Basic profile claims (name, given_name, family_name, picture, preferred_username)
+          email: Email address and verification state
+          offline_access: Refresh token for long-lived access
+          public_metadata: Read the user's public metadata
+          private_metadata: Read the user's private metadata
+    grant_types_supported:
+      - authorization_code
+      - refresh_token
+    response_types_supported:
+      - code
+    response_modes_supported:
+      - form_post
+      - query
+    token_endpoint_auth_methods_supported:
+      - client_secret_basic
+      - client_secret_post
+      - none
+    code_challenge_methods_supported:
+      - S256
+    pkce_required_for_public_clients: true
+    revocation_endpoint: https://clerk.diligentpharma.com/oauth/token/revoke
+    introspection_endpoint: https://clerk.diligentpharma.com/oauth/token_info
+    source: well-known/diligent-pharma-oauth-authorization-server.json
+observations:
+  - Authorization Code with PKCE (S256) is the only interactive flow advertised; there
+    is no client_credentials grant, so there is no machine-to-machine service-account
+    path exposed on this authorization server.
+  - No dynamic client registration endpoint is advertised, so an OAuth client must be
+    provisioned by Diligent Pharma out of band.
+  - No public developer portal, key management page, or authentication guide was found
+    on any Diligent Pharma host.
+gaps:
+  - No public API authentication documentation.
+  - No documented API key, bearer token, or mTLS scheme.
+  - No /.well-known/oauth-protected-resource on any host.
