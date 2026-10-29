@@ -64,10 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Diligent Pharma, Inc. is a Princeton, New Jersey clinical-trial quality and compliance company, founded in 2015, that operates a centralized vendor qualification and oversight platform for pharmaceutical and biotech sponsors and their service providers. Its Diligent360 platform unifies the vendor lifecycle — AI-assisted discovery across a network of 2,000+ clinical vendors, capability evaluation through standardized questionnaires, risk scoring across quality, compliance, cybersecurity and AI risk domains, qualification against ICH E6(R3) and GxP expectations, and ongoing oversight monitoring. Companion products DiligentRespond and DiligentQualified sit alongside a GxP audit services practice.
+Diligent Pharma, Inc. is a Princeton, New Jersey clinical-trial quality and compliance company, founded in 2015, that operates a centralized vendor qualification and oversight platform for pharmaceutical and biotech sponsors and their service providers. Its Diligent360 platform unifies the vendor lifecycle — AI-assisted discovery across a network of 2,000+ clinical vendors, capability evaluation through standardized questionnaires, risk scoring across quality, compliance, cybersecurity and AI risk domains, qualification against ICH E6(R3) and GxP expectations, and ongoing oversight monitoring. Companion products DiligentRespond (automated vendor questionnaire response) and DiligentQualified (qualification package management) sit alongside a GxP audit services practice. The company raised an $8.27M Series A led by FCA Venture Partners in 2023 and has appeared on the Inc. 5000 list. The platform is delivered as an authenticated web application at 360.diligentpharma.com; Diligent Pharma publishes no public developer program, API reference, or machine-readable specification.
 
-**Developer surface:** Diligent Pharma publishes no public API, developer portal, or machine-readable specification. Diligent360 is delivered only as an authenticated web application. The only machine-readable documents on any Diligent Pharma host are the OAuth 2.0 / OpenID Connect discovery documents served by `clerk.diligentpharma.com`, which govern application sign-in.
+**Areas:** Company · Clinical Trials · Life Sciences · Pharmaceuticals · Biotechnology · Vendor Management · Risk Management · Quality Management · Compliance · GxP · Auditing · Software-as-a-Service
 
-- https://www.diligentpharma.com/
-- https://360.diligentpharma.com/
-- https://trust.diligentpharma.com/
+## Diligent Pharma on APIs.io
+
+Everything profiled for Diligent Pharma is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/diligent-pharma/](https://apis.io/providers/diligent-pharma/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Diligent Pharma Authentication](https://apis.io/security/diligent-pharma/diligent-pharma-authentication/)
+- [Diligent Pharma Domain Security](https://apis.io/security/diligent-pharma/diligent-pharma-domain-security/)
+- [Diligent Pharma Trust Center](https://apis.io/security/diligent-pharma/diligent-pharma-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Diligent Pharma Scopes](https://apis.io/scopes/diligent-pharma/diligent-pharma-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Diligent Pharma Plans Pricing](https://apis.io/plans/diligent-pharma/diligent-pharma-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Diligent Pharma Rate Limits](https://apis.io/rate-limits/diligent-pharma/diligent-pharma-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.diligentpharma.com/)
+- [Support](https://support.diligentpharma.com/hc/en-us)
+- [Blog](https://www.diligentpharma.com/resources)
+- [Terms of service](https://www.diligentpharma.com/website-terms-of-use)
+- [Privacy policy](https://www.diligentpharma.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 19.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 35.5 |
+
+**Agent readiness 13.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 36.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/diligent-pharma/](https://apis.io/providers/diligent-pharma/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Diligent Pharma: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/diligent-pharma/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
